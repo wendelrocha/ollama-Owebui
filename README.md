@@ -48,7 +48,7 @@ Este comando fará o download do modelo especificado para o seu sistema.
 
 **2 – Execute o modelo:**
 
-    ollama run deepseek-r1:14b
+    ollama run deepseek-r1:1.5b
 
 Este comando executa o modelo DeepSeek-R1 de 14 bilhões de parâmetros.
 Isso iniciará uma sessão interativa (CLI) onde você pode inserir prompts e receber respostas do modelo diretamente na console.
