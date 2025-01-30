@@ -65,7 +65,7 @@ A instalação do Open WebUI pode ser realizada de duas maneiras principais: uti
 
 **Baixe e execute a imagem Docker do Open WebUI:**
 
-    docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data –name open-webui –restart always ghcr.io/open-webui/open-webui:ollama
+    docker run -d -p 3001:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui1 --restart always ghcr.io/open-webui/open-webui:main
 
 Este comando baixa a imagem do Open WebUI com suporte integrado ao Ollama e a executa em um contêiner Docker. A aplicação ficará acessível em http://localhost:3000
 
@@ -73,11 +73,11 @@ Este comando baixa a imagem do Open WebUI com suporte integrado ao Ollama e a ex
 
     -d: Executa o contêiner em segundo plano (modo “detached”).
 
-    --network=host: Utiliza a rede do host, permitindo que o contêiner acesse serviços em execução no host diretamente.
+    --add-host=host.docker.internal:host-gateway: Utiliza a rede do host, permitindo que o contêiner acesse serviços em execução no host diretamente.
 
     -v open-webui:/app/backend/data: Monta um volume chamado open-webui para persistência de dados.
 
-    -e OLLAMA_BASE_URL=http://127.0.0.1:11434: Define a variável de ambiente OLLAMA_BASE_URL para apontar para o Ollama em execução no host.
+    -e OLLAMA_BASE_URL=http://127.0.0.1:11434: Define a variável de ambiente OLLAMA_BASE_URL para apontar para o Ollama em execução no host. Pode apontar para outro server. 
 
     --name open-webui: Nomeia o contêiner como open-webui.
 
@@ -89,7 +89,7 @@ Este comando baixa a imagem do Open WebUI com suporte integrado ao Ollama e a ex
 
 **1 - Baixe o modelo desejado, aqui vou usar o DeepSeek-R1:**
 
-    ollama pull deepseek-r1:14b
+    ollama pull deepseek-r1:1.5b
  
 Este comando faz o download do modelo especificado para o seu sistema LLM.
  
