@@ -38,11 +38,11 @@ Este comando exibe a versão do Ollama que acabou de ser instalada.
 
 Para executar modelos LLM no Ollama, você precisa fazer o pull do modelo desejado.
 
-**Rodando o DeepSeek-R1 de 14B no Ollama**
+**Rodando o DeepSeek-R1 de 1.5B no Ollama**
 
 **1 - Baixe o modelo DeepSeek-R1:**
 
-    ollama pull deepseek-r1:14b
+    ollama pull deepseek-r1:1.5b
  
 Este comando fará o download do modelo especificado para o seu sistema.
 
@@ -65,7 +65,7 @@ A instalação do Open WebUI pode ser realizada de duas maneiras principais: uti
 
 **Baixe e execute a imagem Docker do Open WebUI:**
 
-    docker run -d -p 3001:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui1 --restart always ghcr.io/open-webui/open-webui:main
+    docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
 
 Este comando baixa a imagem do Open WebUI com suporte integrado ao Ollama e a executa em um contêiner Docker. A aplicação ficará acessível em http://localhost:3000
 
@@ -91,11 +91,11 @@ Este comando baixa a imagem do Open WebUI com suporte integrado ao Ollama e a ex
 
     ollama pull deepseek-r1:1.5b
  
-Este comando faz o download do modelo especificado para o seu sistema LLM.
+Este comando faz o download do modelo especificado para o seu sistema LLM. Caso já tiver baixado anteriormente, este passo é desnecessário.
  
 **2 - Configure o Open WebUI para reconhecer o modelo:**
 
-No Open WebUI, vá até a seção de modelos e adicione o modelo deepseek-r1:14b à lista de modelos disponíveis.
+No Open WebUI, vá até a seção de modelos e adicione o modelo deepseek-r1:1.5b à lista de modelos disponíveis.
 
 **3 – Selecione o modelo e comece a interagir:**
 
